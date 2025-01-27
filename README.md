@@ -152,6 +152,8 @@ flowchart TB
     classDef uggrad fill:#c9ffc9,stroke:#333,stroke-width:1px,color:#000
 ```
 
+Chemistry
+
 ```mermaid
 flowchart LR
     %% Chemistry Core %%
