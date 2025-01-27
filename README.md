@@ -151,3 +151,43 @@ flowchart TB
     classDef resource fill:#c9c9ff,stroke:#333,stroke-width:1px,color:#000
     classDef uggrad fill:#c9ffc9,stroke:#333,stroke-width:1px,color:#000
 ```
+
+```mermaid
+flowchart LR
+    %% Chemistry Core %%
+
+    A111[5.111<br>Principles of Chemical Science] --> A12[5.12<br>Organic Chemistry I]
+    A112[5.112<br>Principles of Chemical Science] --> A12
+    A12 --> A13[5.13<br>Organic Chemistry II]
+    A13 --> A37[5.37<br>Intro to Organic Synthesis Lab]
+
+    %% Chemistry Lab Sequence %%
+
+    A301[5.301<br>Chemistry Laboratory Techniques] --> A310[5.310<br>Laboratory Chemistry]
+    A310 --> A35[5.35<br>Introduction to Experimental Chemistry]
+    A35 --> A36[5.36<br>Biochemistry Laboratory]
+    A36 --> A37
+    %% (Sometimes 5.13 is also recommended before 5.36 or 5.37)
+
+    %% Physical/Quantum Chemistry %%
+
+    A60[5.60<br>Thermodynamics & Kinetics] --> A61[5.61<br>Physical Chemistry]
+    A61 --> A62[5.62<br>Physical Chemistry II]
+    A62 --> A73[5.73<br>Introductory Quantum Mechanics I]
+    A73 --> A74[5.74<br>Introductory Quantum Mechanics II]
+
+    %% Biological Chemistry %%
+
+    A07[5.07SC<br>Biological Chemistry I] --> A08[5.08J<br>Biological Chemistry II]
+
+    %% Chemical Engineering (Undergraduate) %%
+
+    B302[10.302<br>Transport Processes] --> B32[10.32<br>Separation Processes]
+    B32 --> B37[10.37<br>Chemical & Biological Reaction Eng.]
+    B37 --> B490[10.490<br>Integrated Chemical Engineering I]
+    B490 --> B491[10.491<br>Integrated Chemical Engineering II]
+    B491 --> B492A[10.492-1<br>ICE Topics I: Process Control]
+    B491 --> B492B[10.492-2<br>ICE Topics I: Biocatalysis]
+    %% Some curricula also have 10.450 (Process Dynamics & Control)
+    B37 --> B450[10.450<br>Process Dynamics, Operations, & Control]
+```
