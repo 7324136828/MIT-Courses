@@ -191,3 +191,159 @@ flowchart LR
     %% Some curricula also have 10.450 (Process Dynamics & Control)
     B37 --> B450[10.450<br>Process Dynamics, Operations, & Control]
 ```
+
+
+```mermaid
+
+flowchart TB
+
+    %% ----------------------------
+    %%  FOUNDATIONAL / INTRO BIO
+    %% ----------------------------
+    subgraph Intro Biology
+    A012[7.012<br>Intro Biology]
+    A013[7.013<br>Intro Biology]
+    A014[7.014<br>Intro Biology]
+    A016[7.016<br>Intro Biology]
+    A01SC[7.01SC<br>Fundamentals of Biology]
+    end
+    
+    %% All Intro courses can feed into Genetics (7.03):
+    A012 --> B03
+    A013 --> B03
+    A014 --> B03
+    A016 --> B03
+    A01SC --> B03
+    
+    %% ----------------------------
+    %%  CORE UNDERGRAD
+    %% ----------------------------
+    B03[7.03<br>Genetics]
+    B05[7.05<br>General Biochemistry]
+
+    %% 7.02 CI (Experimental Biology - CI); 
+    %% 7.15, 7.16, 7.13 are advanced lab courses in genetics / molecular bio
+    B03 --> B02CI[7.02CI<br>Experimental Biology<br>]
+    B03 --> B15[7.15<br>Experimental Molecular Genetics]
+    B03 --> B16[7.16<br>Exp. Molecular Biology:<br>Biotech II]
+    B03 --> B13[7.13<br>Experimental Microbial Genetics]
+    
+    %% 7.05 can come after Intro (plus some Chemistry background),
+    %% but commonly 7.03 & 7.05 are "core" for advanced biology
+    B03 --> B05
+
+    %% ----------------------------
+    %%  ADVANCED UNDERGRAD
+    %% ----------------------------
+    %% 7.08 Biological Chemistry II
+    B05 --> B08[7.08J<br>Biological Chemistry II]
+
+    %% 7.22 Dev Bio, 7.27 Human Disease,
+    %% 7.29J Cellular Neurobiology
+    B05 --> B22[7.22<br>Developmental Biology]
+    B05 --> B27[7.27<br>Principles of Human Disease]
+    B05 --> B29[7.29J<br>Cellular Neurobiology]
+
+    %% 7.344 (Cell Metabolism & Cancer) 
+    %% often requires both 7.03 & 7.05 background
+    B03 --> B344[7.344<br>Cellular Metabolism & Cancer: <br>Nature or Nurture?]
+    B05 --> B344
+
+    %% Some “7.34x” special topics in biology
+    %% often require 7.03 + 7.05 (and/or 7.06)
+    subgraph Advanced Topics 
+    T341[7.341<br>e.g. Microbes at War, Biomaterials...]
+    T342[7.342<br>e.g. Immune Cell Migration, <br>Synapse Remodeling...]
+    T343[7.343<br>e.g. Microbial Megaproducers, <br>Single-Molecule Imaging...]
+    T344[7.344<br>Antibiotics, Toxins,<br>Protein Engineering] 
+    T347[7.347<br>Epigenetic Regulation<br>of Stem Cells]
+    end
+    B03 --> T341
+    B05 --> T341
+    B03 --> T342
+    B05 --> T342
+    B03 --> T343
+    B05 --> T343
+    B03 --> T344
+    B05 --> T344
+    B03 --> T347
+    B05 --> T347
+
+    %% 7.18 Topics in Experimental Biology 
+    %% might expect 7.02 CI + 7.03 + 7.05 background
+    B02CI --> B18[7.18<br>Topics in Experimental Biology]
+    B03 --> B18
+    B05 --> B18
+
+    %% 9.18 Developmental Neurobio and 9.19J Cog & Behavioral Genetics 
+    %% often expect genetics and/or neuro foundations:
+    B03 --> N19[9.19J<br>Cognitive & Behavioral Genetics]
+    B29 --> N18[9.18<br>Developmental Neurobiology]
+    
+    %% Intro courses also feed into 7.30J (Ecology I) or 20.010J
+    subgraph Other Undergrad
+    B30[7.30J<br>Ecology I: The Earth System]
+    B100[7.00<br>COVID-19, SARS-CoV-2,<br>and the Pandemic]
+    C20[20.010J<br>Intro to Bioengineering]
+    end
+    
+    A012 --> B30
+    A013 --> B30
+    A014 --> B30
+    A016 --> B30
+    A01SC --> B30
+
+    A012 --> B100
+    A013 --> B100
+    A014 --> B100
+    A016 --> B100
+    A01SC --> B100
+    
+    A012 --> C20
+    A013 --> C20
+    A014 --> C20
+    A016 --> C20
+    A01SC --> C20
+
+    %% ----------------------------
+    %%  GRADUATE COURSES
+    %% ----------------------------
+    subgraph Graduate-Level Examples
+    G88[7.88J<br>Protein Folding & Human Disease]
+    G90[7.90J<br>Computational Functional Genomics]
+    G91[7.91J<br>Foundations of Comp & Systems Bio]
+    G92[7.92J<br>Neurology, Neuropsychology,<br>Neurobiology of Aging]
+    G60[7.60<br>Cell Biology: Structure &<br>Functions of the Nucleus]
+    G81[7.81J<br>Systems Biology]
+    G51[7.51<br>Graduate Biochemistry]
+    G547[7.547J <br>Drug Development]
+    end
+
+    %% Typically require core UG background:
+    B03 --> G88
+    B05 --> G88
+    
+    B03 --> G90
+    B05 --> G90
+    B03 --> G91
+    B05 --> G91
+    B29 --> G92
+    
+    B05 --> G60
+    B05 --> G81
+    B05 --> G51
+    G51 --> G81   
+    %% Grad Biochem can feed further
+    
+    %% Drug Development
+    G547
+    
+    %% Teaching courses
+    TTeach[5.95J<br>Teaching College-Level<br>Science & Eng.]
+    B391[7.391<br>Concept-Centered Teaching ]
+    subgraph Teaching
+    TTeach
+    B391
+    end
+
+```
