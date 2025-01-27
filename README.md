@@ -192,6 +192,7 @@ flowchart LR
     B37 --> B450[10.450<br>Process Dynamics, Operations, & Control]
 ```
 
+Biology
 
 ```mermaid
 
@@ -346,4 +347,103 @@ flowchart TB
     B391
     end
 
+```
+
+Mathematics 
+
+```mermaid
+flowchart TD
+
+    %% === UNDERGRADUATE FOUNDATIONS ===
+    subgraph Undergraduate Core
+    A18_01((18.01<br>Single Variable Calculus))
+    A18_02((18.02<br>Multivariable Calculus))
+    A18_03((18.03<br>Differential Equations))
+    A18_04((18.04<br>Complex Variables))
+    A18_06((18.06<br>Linear Algebra))
+    A18_022((18.022<br>Calculus of Several Variables))
+    A18_100A((18.100A<br>Introduction to Analysis))
+    A18_100B((18.100B<br>Analysis I))
+    A18_102((18.102<br>Introduction to Functional Analysis))
+    A18_700((18.700<br>Linear Algebra))
+    A18_701((18.701<br>Algebra I))
+    A18_702((18.702<br>Algebra II))
+    A18_703((18.703<br>Modern Algebra))
+    A18_901((18.901<br>Introduction to Topology))
+    A18_902((18.902<br>Introduction to Topology II))  
+    %% Not in the list, but for illustration
+    
+    %% Core prereq flow
+    A18_01 --> A18_02
+    A18_01 --> A18_022
+    A18_02 --> A18_03
+    A18_022 --> A18_03
+    A18_02 --> A18_06
+    A18_022 --> A18_06
+    A18_03 --> A18_04
+    
+    %% Analysis sequence
+    A18_03 --> A18_100A
+    A18_03 --> A18_100B
+    A18_100A --> A18_102
+    
+    %% Algebra / Topology sequences
+    A18_06 --> A18_700
+    A18_700 --> A18_701
+    A18_701 --> A18_702
+    A18_702 --> A18_703
+    A18_901 --> A18_902
+    
+    end
+
+    %% === SAMPLE UPPER-LEVEL UNDERGRAD / SEMINARS ===
+    subgraph Undergraduate Advanced & Seminars
+    A18_104((18.104<br>Seminar in Analysis))
+    A18_314((18.314<br>Combinatorial Analysis))
+    A18_433((18.433<br>Combinatorial Optimization))
+    A18_440((18.440<br>Probability & Random Variables))
+    A18_450((18.450<br>Placeholder Example))  
+    %% Not listed, for illustration
+    A18_905u((18.905<br>Algebraic Topology I -- UG?)) 
+    %% Actually Graduate in the list, but example
+    end
+    
+    A18_100B -- "often recommended background" --> A18_104
+    A18_06 --> A18_314
+    A18_314 --> A18_433
+    A18_03 --> A18_440
+
+    %% === GRADUATE EXAMPLES ===
+    subgraph Graduate
+    G18_085((18.085<br>CSE I))
+    G18_086((18.086<br>Math Methods for Engineers II))
+    G18_307((18.307<br>Integral Equations))
+    G18_325((18.325<br>Waves & Imaging))
+    G18_336((18.336<br>Numerical Methods for PDEs))
+    G18_415J((18.415J<br>Advanced Algorithms))
+    G18_416J((18.416J<br>Randomized Algorithms))
+    G18_435J((18.435J<br>Quantum Computation))
+    G18_446((18.445<br>Intro to Stochastic Processes))
+    G18_650((18.650<br>Statistics for Applications))
+    G18_705((18.705<br>Commutative Algebra))
+    G18_725((18.725<br>Algebraic Geometry))
+    G18_906((18.906<br>Algebraic Topology II))
+    end
+
+    %% Illustrative grad-level prereqs
+    G18_085 --- A18_06
+    G18_086 --> G18_307
+    G18_336 --> G18_325
+    A18_314 -- "or equivalent combinatorics" --> G18_415J
+    G18_415J --> G18_416J
+    A18_440 -- "undergrad probability" --> G18_446
+    A18_701 -- "or strong algebra background" --> G18_705
+    A18_702 -- "or 18.703" --> G18_725
+    A18_901 -- "or 18.904" --> G18_906
+    G18_650 --> G18_705
+
+    %% === OPTIONAL LINKS AMONG GROUPS ===
+    A18_100B -- "or 18.100C" --> G18_102
+    A18_06 --> A18_700
+    A18_700 -- "linear algebra background" --> G18_435J
 ```
